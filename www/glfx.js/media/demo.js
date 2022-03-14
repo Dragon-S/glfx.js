@@ -96,7 +96,8 @@ var initCount = 0, loadCount = 1;
 var images = {
     'image.jpg': { credit: 'matthigh', url: 'https://www.flickr.com/photos/matthigh/2125630879/' },
     'lighthouse.jpg': { credit: 'renet', url: 'https://www.flickr.com/photos/renet/12135813/' },
-    'perspective.jpg': { credit: 'stuckincustoms', url: 'https://www.flickr.com/photos/stuckincustoms/1213760517/' }
+    'perspective.jpg': { credit: 'stuckincustoms', url: 'https://www.flickr.com/photos/stuckincustoms/1213760517/' },
+    'person.jpg': { credit: 'stuckincustoms', url: 'https://www.flickr.com/photos/stuckincustoms/1213760517/' }
 };
 for (var file in images) {
     var image = images[file].image = new Image();
@@ -254,7 +255,12 @@ var filters = {
             this.addSlider('angle', 'Angle', -Math.PI, Math.PI, 0, 0.01);
         }, function() {
             this.setCode('canvas.draw(texture).lensBlur(' + this.radius + ', ' + this.brightness + ', ' + this.angle + ').update();');
-        }, 'lighthouse.jpg')
+        }, 'lighthouse.jpg'),
+        new Filter('Gaussian Blur', 'gaussianBlur', function() {
+            this.addSlider('sigma', 'Sigma', 1.0, 50, 10.0, 1.0);
+        }, function() {
+            this.setCode('canvas.draw(texture).gaussianBlur(' + this.sigma + ').update();');
+        }, 'person.jpg')
     ],
     'Warp': [
         new Filter('Swirl', 'swirl', function() {
@@ -313,6 +319,11 @@ var filters = {
             this.addSlider('size', 'Size', 3, 20, 4, 0.01);
         }, function() {
             this.setCode('canvas.draw(texture).colorHalftone(' + this.center.x + ', ' + this.center.y + ', ' + this.angle + ', ' + this.size + ').update();');
-        })
+        }),
+        new Filter('Simple Beauty Filter', 'simpleBeautyFilter', function() {
+            this.addSlider('strength', 'Strength', 0, 10, 1, 0.1);
+        }, function() {
+            this.setCode('canvas.draw(texture).simpleBeautyFilter(' + this.strength + ').update();');
+        }, 'person.jpg')
     ]
 };

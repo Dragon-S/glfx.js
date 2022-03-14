@@ -178,6 +178,8 @@ exports.canvas = function() {
     canvas.vignette = wrap(vignette);
     canvas.vibrance = wrap(vibrance);
     canvas.sepia = wrap(sepia);
+    canvas.simpleBeautyFilter = wrap(simpleBeautyFilter);
+    canvas.gaussianBlur = wrap(gaussianBlur);
 
     return canvas;
 };
