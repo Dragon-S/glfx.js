@@ -260,6 +260,12 @@ var filters = {
             this.addSlider('sigma', 'Sigma', 1.0, 50, 10.0, 1.0);
         }, function() {
             this.setCode('canvas.draw(texture).gaussianBlur(' + this.sigma + ').update();');
+        }, 'person.jpg'),
+        new Filter('Bilateral Blur', 'bilateralBlur', function() {
+            this.addSlider('sigma', 'Sigma', 1.0, 50, 10.0, 1.0);
+            this.addSlider('bsigma', 'Bsigma', 0.01, 1.0, 0.1, 0.01);
+        }, function() {
+            this.setCode('canvas.draw(texture).bilateralBlur(' + this.sigma + ', ' + this.bsigma + ').update();');
         }, 'person.jpg')
     ],
     'Warp': [

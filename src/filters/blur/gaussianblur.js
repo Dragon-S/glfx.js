@@ -10,10 +10,7 @@
  *                 using separability.  Rather, we leverage the pixel parallelism of the GPU 
  *                 to accelerate a brute force implementation of 2D convolution.
  *                 (This implementation is based on the work of https://www.shadertoy.com/view/XdfGDH)
- * @param sigma    The multiplicative scale of the ink edges. Values in the range 0 to 1
- *                 are usually sufficient, where 0 doesn't change the image and 1 adds lots
- *                 of black edges. Negative strength values will create white ink edges
- *                 instead of black ones.
+ * @param sigma    高斯函数标准差
  */
  function gaussianBlur(sigma) {
     gl.gaussianBlur = gl.gaussianBlur || new Shader(null, '\

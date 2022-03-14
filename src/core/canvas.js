@@ -180,6 +180,7 @@ exports.canvas = function() {
     canvas.sepia = wrap(sepia);
     canvas.simpleBeautyFilter = wrap(simpleBeautyFilter);
     canvas.gaussianBlur = wrap(gaussianBlur);
+    canvas.bilateralBlur = wrap(bilateralBlur);
 
     return canvas;
 };
