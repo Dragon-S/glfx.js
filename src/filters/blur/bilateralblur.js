@@ -6,8 +6,8 @@
  *                 via separable convolution. However, the Bilateral filter can take advantage
  *                 of pixel parallelism. (This implementation is based on the work of
  *                 https://www.shadertoy.com/view/4dfGDH#)
- * @param sigma    高斯函数标准差（像素空间邻近度）
- * @param bsigma   高斯函数标准差（像素相似度）
+ * @param sigma    Gaussian function standard deviation (pixel spatial proximity)
+ * @param bsigma   Gaussian function standard deviation (pixel similarity)
  */
  function bilateralBlur(sigma, bsigma) {
     gl.bilateralBlur = gl.bilateralBlur || new Shader(null, '\

@@ -10,7 +10,7 @@
  *                 using separability.  Rather, we leverage the pixel parallelism of the GPU 
  *                 to accelerate a brute force implementation of 2D convolution.
  *                 (This implementation is based on the work of https://www.shadertoy.com/view/XdfGDH)
- * @param sigma    高斯函数标准差
+ * @param sigma    Gaussian function standard deviation
  */
  function gaussianBlur(sigma) {
     gl.gaussianBlur = gl.gaussianBlur || new Shader(null, '\

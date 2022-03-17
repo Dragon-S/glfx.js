@@ -330,6 +330,11 @@ var filters = {
             this.addSlider('strength', 'Strength', 0, 10, 1, 0.1);
         }, function() {
             this.setCode('canvas.draw(texture).simpleBeautyFilter(' + this.strength + ').update();');
+        }, 'person.jpg'),
+        new Filter('Sobel Edge Detection Filter', 'sobelEdgeDetectionFilter', function() {
+            this.addSlider('edgeStrength', 'EdgeStrength', 0, 10, 1.0, 0.1);
+        }, function() {
+            this.setCode('canvas.draw(texture).sobelEdgeDetectionFilter(' + this.edgeStrength + ').update();');
         }, 'person.jpg')
     ]
 };

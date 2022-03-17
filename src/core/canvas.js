@@ -181,6 +181,7 @@ exports.canvas = function() {
     canvas.simpleBeautyFilter = wrap(simpleBeautyFilter);
     canvas.gaussianBlur = wrap(gaussianBlur);
     canvas.bilateralBlur = wrap(bilateralBlur);
+    canvas.sobelEdgeDetectionFilter = wrap(sobelEdgeDetectionFilter);
 
     return canvas;
 };
