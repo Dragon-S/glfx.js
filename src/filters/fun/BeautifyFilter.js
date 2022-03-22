@@ -46,7 +46,7 @@
     });
     // Blur the second texture
     this._.extraTexture.use(1);
-    this.bilateralBlur(40.0, 0.2);
+    this.bilateralBlur(40.0, 0.25);
 
     // Store a copy of the current texture in the third texture unit
     this._.thirdTexture.ensureFormat(this._.texture);
