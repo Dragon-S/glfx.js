@@ -227,7 +227,14 @@ var filters = {
             this.addSlider('amount', 'Amount', 0, 1, 0.5, 0.01);
         }, function() {
             this.setCode('canvas.draw(texture).vignette(' + this.size + ', ' + this.amount + ').update();');
-        })
+        }),
+        new Filter('HSB Filter', 'hsbFilter', function() {
+            this.addSlider('hue', 'Hue', -360.0, 360.0, 1.0, 1.0);
+            this.addSlider('saturation', 'Saturation', 0.0, 2.0, 1.0, 0.1);
+            this.addSlider('brightness', 'Brightness', 0.0, 2.0, 1.0, 0.1);
+        }, function() {
+            this.setCode('canvas.draw(texture).hsbFilter(' + this.hue + ', ' + this.saturation + ', ' + this.brightness + ').update();');
+        }, 'person.jpg')
     ],
     'Blur': [
         new Filter('Zoom Blur', 'zoomBlur', function() {

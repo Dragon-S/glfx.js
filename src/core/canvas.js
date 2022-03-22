@@ -182,6 +182,7 @@ exports.canvas = function() {
     canvas.gaussianBlur = wrap(gaussianBlur);
     canvas.bilateralBlur = wrap(bilateralBlur);
     canvas.sobelEdgeDetectionFilter = wrap(sobelEdgeDetectionFilter);
+    canvas.hsbFilter = wrap(hsbFilter);
 
     return canvas;
 };
