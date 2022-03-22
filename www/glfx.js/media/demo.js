@@ -342,6 +342,11 @@ var filters = {
             this.addSlider('edgeStrength', 'EdgeStrength', 0, 10, 1.0, 0.1);
         }, function() {
             this.setCode('canvas.draw(texture).sobelEdgeDetectionFilter(' + this.edgeStrength + ').update();');
+        }, 'person.jpg'),
+        new Filter('Beautify Filter', 'beautifyFilter', function() {
+            this.addSlider('intensity', 'Intensity', 0.0, 1.0, 0.7, 0.01);
+        }, function() {
+            this.setCode('canvas.draw(texture).beautifyFilter(' + this.intensity + ').update();');
         }, 'person.jpg')
     ]
 };

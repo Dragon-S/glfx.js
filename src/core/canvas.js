@@ -48,6 +48,7 @@ function initialize(width, height) {
     this._.texture = new Texture(width, height, gl.RGBA, type);
     this._.spareTexture = new Texture(width, height, gl.RGBA, type);
     this._.extraTexture = this._.extraTexture || new Texture(0, 0, gl.RGBA, type);
+    this._.thirdTexture = this._.thirdTexture || new Texture(0, 0, gl.RGBA, type);
     this._.flippedShader = this._.flippedShader || new Shader(null, '\
         uniform sampler2D texture;\
         varying vec2 texCoord;\
@@ -183,6 +184,7 @@ exports.canvas = function() {
     canvas.bilateralBlur = wrap(bilateralBlur);
     canvas.sobelEdgeDetectionFilter = wrap(sobelEdgeDetectionFilter);
     canvas.hsbFilter = wrap(hsbFilter);
+    canvas.beautifyFilter = wrap(beautifyFilter);
 
     return canvas;
 };
