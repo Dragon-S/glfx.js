@@ -46,7 +46,7 @@
     });
     // Blur the second texture
     this._.extraTexture.use(1);
-    this.bilateralBlur(40.0, 0.25);
+    this.bilateralBlur(20.0, 0.15);
 
     // Store a copy of the current texture in the third texture unit
     this._.thirdTexture.ensureFormat(this._.texture);
@@ -56,7 +56,7 @@
     });
     // Detect edges the third texture
     this._.thirdTexture.use(2);
-    this.sobelEdgeDetectionFilter(0.5);
+    this.sobelEdgeDetectionFilter(0.8);
 
     // Blur the current texture, then use the stored texture to detect edges
     gl.beautifyFilter.textures({
