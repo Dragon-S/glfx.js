@@ -185,6 +185,8 @@ exports.canvas = function() {
     canvas.sobelEdgeDetectionFilter = wrap(sobelEdgeDetectionFilter);
     canvas.hsbFilter = wrap(hsbFilter);
     canvas.beautifyFilter = wrap(beautifyFilter);
+    canvas.colorMatrixFilter = wrap(colorMatrixFilter);
+    canvas.hsbProFilter = wrap(hsbProFilter);
 
     return canvas;
 };

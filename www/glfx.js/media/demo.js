@@ -195,7 +195,7 @@ var filters = {
             this.addSlider('saturation', 'Saturation', -1, 1, 0, 0.01);
         }, function() {
             this.setCode('canvas.draw(texture).hueSaturation(' + this.hue + ', ' + this.saturation + ').update();');
-        }),
+        }, 'person.jpg'),
         new Filter('Vibrance', 'vibrance', function() {
             this.addSlider('amount', 'Amount', -1, 1, 0.5, 0.01);
         }, function() {
@@ -234,6 +234,13 @@ var filters = {
             this.addSlider('brightness', 'Brightness', 0.0, 2.0, 1.0, 0.1);
         }, function() {
             this.setCode('canvas.draw(texture).hsbFilter(' + this.hue + ', ' + this.saturation + ', ' + this.brightness + ').update();');
+        }, 'person.jpg'),
+        new Filter('HSB Pro Filter', 'hsbProFilter', function() {
+            this.addSlider('hue', 'Hue', -180.0, 180.0, 0.0, 1.0);
+            this.addSlider('saturation', 'Saturation', 0.0, 2.0, 1.0, 0.1);
+            this.addSlider('brightness', 'Brightness', 0.0, 2.0, 1.0, 0.1);
+        }, function() {
+            this.setCode('canvas.draw(texture).hsbProFilter(' + this.hue + ', ' + this.saturation + ', ' + this.brightness + ').update();');
         }, 'person.jpg')
     ],
     'Blur': [
