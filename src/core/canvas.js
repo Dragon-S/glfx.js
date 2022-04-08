@@ -187,6 +187,7 @@ exports.canvas = function() {
     canvas.beautifyFilter = wrap(beautifyFilter);
     canvas.colorMatrixFilter = wrap(colorMatrixFilter);
     canvas.hsbProFilter = wrap(hsbProFilter);
+    canvas.sharpenFilter = wrap(sharpenFilter);
 
     return canvas;
 };

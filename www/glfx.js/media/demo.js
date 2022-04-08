@@ -354,6 +354,11 @@ var filters = {
             this.addSlider('intensity', 'Intensity', 0.0, 1.0, 0.7, 0.01);
         }, function() {
             this.setCode('canvas.draw(texture).beautifyFilter(' + this.intensity + ').update();');
+        }, 'person.jpg'),
+        new Filter('Sharpen Filter', 'sharpenFilter', function() {
+            this.addSlider('sharpness', 'sharpness', -4.0, 4.0, 0.0, 0.1);
+        }, function() {
+            this.setCode('canvas.draw(texture).sharpenFilter(' + this.sharpness + ').update();');
         }, 'person.jpg')
     ]
 };
