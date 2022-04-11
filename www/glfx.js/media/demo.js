@@ -190,6 +190,12 @@ var filters = {
         }, function() {
             this.setCode('canvas.draw(texture).brightnessContrast(' + this.brightness + ', ' + this.contrast + ').update();');
         }),
+        new Filter('White Balance Filter', 'whiteBalanceFilter', function() {
+            this.addSlider('temperature', 'Temperature', 2700.0, 8500.0, 5000.0, 10.0);
+            this.addSlider('tint', 'Tint', -200, 1, 200, 1);
+        }, function() {
+            this.setCode('canvas.draw(texture).whiteBalanceFilter(' + this.temperature + ', ' + this.tint + ').update();');
+        }),
         new Filter('Hue / Saturation', 'hueSaturation', function() {
             this.addSlider('hue', 'Hue', -1, 1, 0, 0.01);
             this.addSlider('saturation', 'Saturation', -1, 1, 0, 0.01);
